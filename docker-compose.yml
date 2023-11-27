@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    platform: linux/amd64
+    build: docker
+    hostname: "app"
+    volumes:
+      - .:/usr/src/client
+      - bundle:/bundle
+    stdin_open: true
+    tty: true
+volumes:
+  bundle:
+    driver: local
